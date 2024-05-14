@@ -84,6 +84,7 @@ let g:lsp_inlay_hints_delay = get(g:, 'lsp_inlay_hints_delay', 350)
 let g:lsp_code_action_ui = get(g:, 'lsp_code_action_ui', 'preview')
 
 let g:lsp_get_supported_capabilities = get(g:, 'lsp_get_supported_capabilities', [function('lsp#default_get_supported_capabilities')])
+let g:lsp_get_server_capabilities = get(g:, 'lsp_get_server_capabilities', [function('lsp#default_get_server_capabilities')])
 
 let g:lsp_document_symbol_detail = get(g:, 'lsp_document_symbol_detail', 0)
 

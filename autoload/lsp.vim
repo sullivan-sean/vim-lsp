@@ -107,9 +107,13 @@ function! lsp#get_server_root_uri(server_name) abort
     return get(s:servers[a:server_name]['server_info'], '_root_uri_resolved', '')
 endfunction
 
-function! lsp#get_server_capabilities(server_name) abort
+function! lsp#default_get_server_capabilities(server_name) abort
     let l:server = s:servers[a:server_name]
     return has_key(l:server, 'init_result') ? l:server['init_result']['result']['capabilities'] : {}
+endfunction
+
+function! lsp#get_server_capabilities(server_name) abort
+    return call(g:lsp_get_server_capabilities[0], [a:server_name])
 endfunction
 
 function! s:server_status(server_name) abort
